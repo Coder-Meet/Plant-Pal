@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant Pal - Get Your Personalized Plant Recommendations</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
   <header>
@@ -12,9 +13,10 @@
   </header>
   <main>
     <section class="hero">
-      <img src="Gemini_Generated_Image.jpg" alt="A person enjoying a lush houseplant">
-      <h2>Unlock Plant Perfection with AI</h2>
-      <p>Discover the perfect plants for your space and lifestyle with our personalized recommendations.</p>
+      <img src="https://media.discordapp.net/attachments/1222703941893099701/1223929366384349266/Gemini_Generated_Image.jpg?ex=661ba40c&is=66092f0c&hm=d359a3420b82e0164c794dc5cc9a83baec3eba7f8425b69c114ede7e89460b09&=&format=webp&width=1306&height=1306">
+      <div class="hero-content">
+  <h2>Unlock Plant Perfection with AI</h2>
+</div>
       <form id="plant-form">
         <div class="form-group">
           <label for="location">Location:</label>
@@ -27,21 +29,44 @@
         <div class="form-group">
           <label for="timeframe">Timeframe:</label>
           <select id="timeframe" name="timeframe" required class="form-control">
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
+            <option value="low">Low (0-2 Hrs/ Week</option>
+            <option value="medium">Medium (2-5 Hrs/ Week</option>
+            <option value="high">High (5+ Hrs/ Week</option>
           </select>
-      </div>
+        </div>
         <div class="form-group">
-          <label for="image">Image (optional):</label>
+          <label for="image">Image:</label>
           <input type="file" id="image" name="image" accept="image/*" class="form-control">
         </div>
         <button type="submit">Get Your Recommendations</button>
       </form>
+      <div id="loading" style="display: none;">Loading...</div>
+      <div id="results"></div>
     </section>
   </main>
   <footer>
-    <p> Plant Pal | Copyright &copy; 2024</p>
+    <p> Plant Pal | Copyright Â© 2024</p>
   </footer>
+  <script>
+    $(document).ready(function() {
+      $('#plant-form').on('submit', function(e) {
+        e.preventDefault();
+        $('#loading').show();
+        $.ajax({
+          url: 'http://127.0.0.1:5000/submit-data',
+          type: 'post',
+          data: $('#plant-form').serialize(),
+          success: function(response) {
+            $('#loading').hide();
+            var html = '';
+            html += response.candidates[0].content.parts[0].text;
+            $('#results').html(html);
+          }
+        })
+      })
+    })
+  </script>
+
 </body>
+
 </html>
