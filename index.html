@@ -3,32 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Details</title>
+  <title>Plant Pal - Get Your Personalized Plant Recommendations</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Project Details</h1>
-  <form id="project-form" method="POST" enctype="multipart/form-data">
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" required><br>
-    <label for="budget">Budget:</label>
-    <input type="number" id="budget" name="budget" required><br>
-    <label for="timeframe">Timeframe:</label>
-    <input type="time" id="timeframe" name="timeframe" required><br>
-    <label for="image">Image (optional):</label>
-    <input type="file" id="image" name="image" accept="image/*"><br>
-    <button type="submit">Submit</button>
-  </form>
-
-  <h2>Analysis Results</h2>
-  <ul>
-    <li>Location: {{ data['location'] }}</li>
-    <li>Budget: {{ data['budget'] }}</li>
-    <li>Timeframe: {{ data['timeframe'] }}</li>
-    <li>Has Image: {{ data['has_image'] }}</li>
-    <li>Analysis: {% if data.get('analysis') %}{{ data['analysis'] }}{% else %}No analysis available{% endif %}</li>
-  </ul>
-
-  <script src="script.js"></script>
+  <header>
+    <h1><span class="title">Plant Pal</span><br><span class="slogan">Your Leafy Companion for Greener Days!</span></h1>
+  </header>
+  <main>
+    <section class="hero">
+      <img src="Gemini_Generated_Image.jpg" alt="A person enjoying a lush houseplant">
+      <h2>Unlock Plant Perfection with AI</h2>
+      <p>Discover the perfect plants for your space and lifestyle with our personalized recommendations.</p>
+      <form id="plant-form">
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="budget">Budget:</label>
+          <input type="number" id="budget" name="budget" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="timeframe">Timeframe:</label>
+          <select id="timeframe" name="timeframe" required class="form-control">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+          </select>
+      </div>
+        <div class="form-group">
+          <label for="image">Image (optional):</label>
+          <input type="file" id="image" name="image" accept="image/*" class="form-control">
+        </div>
+        <button type="submit">Get Your Recommendations</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p> Plant Pal | Copyright &copy; 2024</p>
+  </footer>
 </body>
 </html>
