@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #006B38; /* Bottle green for the header */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem; /* Increase font size for the title */
+}
+
+.slogan {
+  font-size: 1rem; /* Font size for the slogan */
+  font-style: italic;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+/* Hero Section Styles */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background-color: #f0f8ff; /* Lighter blue background */
+}
+
+.hero img {
+  width: 350px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  color: #38b000; /* Richer green for headings */
+}
+
+.hero p {
+  line-height: 1.5;
+  color: #666; /* Lighter gray for body text */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Darker
