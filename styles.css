@@ -3,18 +3,27 @@ body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
   padding: 0;
+  border: None;
 }
 
 header {
   background-color: #006B38; /* Bottle green for the header */
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 .title {
-  font-size: 3rem; /* Increase font size for the title */
+    font-size: 3rem;
+    animation: fade-in 2s ease-out;
 }
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
 
 .slogan {
   font-size: 1rem; /* Font size for the slogan */
@@ -22,7 +31,7 @@ header {
 }
 
 main {
-  padding: 20px;
+  padding: 5px;
 }
 
 section {
@@ -63,4 +72,273 @@ section {
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  color: #333; /* Darker
+  color: #333; 
+}
+  
+.form-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* This will give the input fields an oval shape */
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: #90ee90; /* Light green border when input is focused */
+}
+
+#plant-form {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    font-size: 1.2em;
+    color: white;
+    background-color: #38b000; /* Rich green */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px; /* Oval shape */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #006B38; /* Darker green on hover */
+}
+body {
+    background: linear-gradient(to bottom, #f0f8ff, #90ee90); /* Transition from light blue to light green */
+}
+
+header {
+    background: linear-gradient(to bottom, #006B38, #f0f8ff); /* Transition from green to light blue */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.form-control:hover, .form-control:focus {
+    border-color: #90ee90; /* Light green border when input is hovered over or focused */
+    box-shadow: 0 0 5px #90ee90; /* Light green glow when input is hovered over or focused */
+}
+
+.slogan {
+    font-size: 1.2rem;
+    color: #006A4E; /* Less bright green */
+    text-shadow: 1px 1px #006B38;
+    animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+    0% { color: #76b478; }
+    50% { color: #90ee90; }
+    100% { color: #76b478; }
+}
+
+/* Initially hide the elements and set up the animation */
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+}
+
+/* When the 'visible' class is added, show the elements and move them to their original position */
+.scroll-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+label {
+    font-size: 1.2em;
+    color: #006B38; /* Bottle green */
+    font-weight: bold;
+}
+footer {
+  background-color: #f0f8ff; /* Light blue for the footer */
+  color: #006B38; /* Bottle green for the text */
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  border-top: 2px solid #90ee90; /* Light green border at the top */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #38b000; /* Rich green for links */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #006B38; /* Darker green for hover over links */
+}
+
+#loading {
+  display: none;
+  position: fixed; /* Fixed/sticky position */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(144, 238, 144, 0.8); /* Light green with opacity */
+  backdrop-filter: blur(8px); /* Apply blur to the background elements */
+  padding-top: 20%;
+  text-align: center;
+  color: #006B38; /* Bottle green for the text */
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#loading:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border: 6px solid #006B38; /* Bottle green for the spinner */
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* Style for all input fields, including text, number, and file */
+input[type="text"], input[type="number"], input[type="file"], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 50px; /* This will give the input fields an oval shape */
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Style for focus state */
+input[type="text"]:focus, input[type="number"]:focus, input[type="file"]:focus, select:focus {
+  border-color: #90ee90; /* Light green border when input is focused */
+}
+
+/* Custom arrow for select dropdown */
+select {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="%23006B38"><polygon points="0,0 20,0 10,15"/></svg>') no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 12px;
+  padding-right: 30px; /* To make room for the custom arrow */
+}
+
+/* Custom style for file input */
+input[type="file"] {
+  color: transparent; /* Hide the default file input text */
+}
+
+/* Style for file input */
+input[type="file"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 50px; /* This will give the input fields an oval shape */
+  box-sizing: border-box;
+  outline: none;
+  background-color: #f0000; /* Light blue background */
+  color: #006B38; /* Bottle green text */
+}
+
+/* Style for focus state */
+input[type="file"]:focus {
+  border-color: #90ee90; /* Light green border when input is focused */
+}
+
+.hero img {
+  width: 350px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add some shadow for depth */
+  transition: transform 0.2s; /* Animation */
+}
+
+.hero img:hover {
+  transform: scale(1.02); /* Slightly enlarge the image when hovered over */
+}
+.hero-content {
+  position: relative;
+  width: 350px;
+}
+
+.hero-content img {
+  width: 100%;
+}
+
+
+.hero-content h2 {
+  position: absolute;
+  bottom: 50px; /* Adjust this value to move the text higher */
+  left: 10px;
+  color: #fff; /* White text */
+  text-shadow: 2px 2px 4px #000; /* Text shadow for better readability */
+}
+header {
+  /* existing styles */
+  margin-bottom: 0; /* Remove any bottom margin */
+}
+.hero-content h2 {
+  position: absolute;
+  bottom: 10px; /* Adjust this value to move the text to the edge of the image */
+  left: 10px;
+  color: #fff; /* White text */
+  text-shadow: 2px 2px 4px #000; /* Text shadow for better readability */
+}
+
+.plant {
+  background-color: #f0f8ff; /* Light blue background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Shadow for 3D effect */
+  margin: 20px auto; /* Center the div and add space around it */
+  padding: 20px; /* Space between the content and the border */
+  width: 80%; /* Width of the div */
+  max-width: 600px; /* Maximum width of the div */
+}
+ 
+/* If you want to add a hover effect */
+.plant:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Styles for the output section */
+#results {
+  background-color: #f8f8f8; /* Light gray background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Add some spacing from the previous content */
+  color: #333; /* Text color */
+  font-size: 1.1rem; /* Font size */
+  line-height: 1.5; /* Line height for readability */
+}
+
+/* Style any specific elements within the output section as needed */
+#results p {
+  margin-bottom: 10px; /* Spacing between paragraphs */
+}
